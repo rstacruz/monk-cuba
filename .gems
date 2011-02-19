@@ -1,0 +1,14 @@
+# To install these...
+#  ...with Monk:   monk install
+#   ...with RVM:   cat .gems | grep -v \# | xargs gem install
+#  ...otherwise:   cat .gems | grep -v \# | xargs sudo gem install
+
+# Runtime dependencies
+cuba -v "~> 1.0"
+haml -v ">= 3.0"
+
+# Dev/test dependencies
+shotgun -v ">= 0.8"
+cutest -v "~> 1.0"
+spawn
+capybara

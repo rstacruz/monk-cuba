@@ -1,0 +1,24 @@
+class Monk
+  task(:test) {
+    $:.unshift File.join(File.dirname(__FILE__), "test")
+
+    require 'cutest'
+    Cutest.run(Dir['./test/**/*_test.rb'])
+  }
+
+  task.description = "Run all tests"
+
+  task(:start) {
+    `shotgun -v` rescue pass("The gem 'shotgun' wasn't found. Type `#{executable} install` first.")
+    system "shotgun"
+  }
+
+  task.description = "Starts the server"
+
+  task(:irb) {
+    irb = ENV['IRB_PATH'] || 'irb'
+    system "#{irb} -r./app.rb"
+  }
+
+  task.description = "Opens a console session"
+end
