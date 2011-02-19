@@ -8,8 +8,8 @@ With monk:
 
 Without monk:
 
-   cat .gems | grep -v \# | xargs gem install
-   shotgun
+    cat .gems | grep -v \# | xargs gem install
+    shotgun
 
 Using this skeleton
 -------------------
